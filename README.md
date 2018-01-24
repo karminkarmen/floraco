@@ -1,4 +1,4 @@
-# Sit on chair
+# Floraco
 
 Project of online flower shop.
 In progress.
