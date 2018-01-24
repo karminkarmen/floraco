@@ -5,4 +5,4 @@ In progress.
 
 **Technologies: HTML, CSS**
 
-<a href="https://karminkarmen.github.io/Sit-on-chair/">**LINK TO PREWIEV**</a>
+<a href="https://karminkarmen.github.io/floraco/">**LINK TO PREWIEV**</a>
