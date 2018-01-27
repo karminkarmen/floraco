@@ -19,6 +19,7 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream())
 });
 
+
 //obserwator plików
 gulp.task('watch', function() {
     browserSync.init({
@@ -30,4 +31,5 @@ gulp.task('watch', function() {
     gulp.watch('scss/*.scss', ['sass']);
     //obserwacja htmla
     gulp.watch('./index.html', browserSync.reload);
+
 });

@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>F L O R A co</title>
-    <link href="css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico|Playfair+Display" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="aos-master/dist/aos.js"></script>
+    <link rel="stylesheet" href="aos-master/dist/aos.css" />
+    <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 <!--H E A D E R-->
@@ -39,7 +42,7 @@
     <div id="home" class="hero-image">
         <div class="row">
             <div class="col-12 header-text">
-                <h1>new<br>arrivals</h1>
+                <h1 data-aos="zoom-in">new<br>arrivals</h1>
                 <!--<h2>Lorem ipsum dolor sit amet</h2>-->
             </div>
         </div>
@@ -50,7 +53,7 @@
 <!--A B O U T-->
 <section id="about" class="container text">
     <div class="row">
-        <div class="col-6">
+        <div class="col-6" data-aos="fade-left">
             <h1>Flowers is our passion </h1>
             <h2>We make something special</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, explicabo dolores ipsam aliquam inventore
@@ -67,7 +70,7 @@
                 inventore nam pariatur! Culpa deleniti doloremque earum ipsum laboriosam perferendis possimus, repellat
                 repellendus tempore voluptates?</p>
         </div>
-        <div class="col-6 photo-about"></div>
+        <div class="col-6 photo-about" data-aos="fade-right"></div>
     </div>
 </section>
 <section class="banner row">
@@ -81,7 +84,7 @@
 <!--G A L L E R Y -->
 <section id="products" class="container gallery">
     <h2>Products</h2>
-    <div class="row">
+    <div class="row" data-aos="fade-left">
         <div class="col-4">
             <div class="photo photo1"><div class="price"><p>10.99<span>$<span></span></p></div></div>
             <div class="title">
@@ -104,7 +107,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, iusto!</p>
         </div>
     </div>
-    <div class="row">
+    <div class="row" data-aos="fade-right">
         <div class="col-4">
             <div class="photo photo4"><div class="price"><p>7.90<span>$<span></span></p></div></div>
             <div class="title">
@@ -152,5 +155,6 @@
         </div>
     </div>
 </footer>
+<script src="js/app.js"></script>
 </body>
 </html>
