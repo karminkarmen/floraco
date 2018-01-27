@@ -1,3 +1,5 @@
+//G L O B A L
+
 * {
   padding: 0;
   margin: 0;
@@ -10,7 +12,7 @@ html {
 
 $columns: 12;
 $baseColumnWidth: 100%/$columns;
-$main-color: #01352C;
+$main-color: #9BB899;
 $accent: #FCCEAA;
 $to-color: #F5827D;
 $font-color: #343A40;
@@ -42,6 +44,8 @@ $header-color: #EA4961;
   }
 }
 
+//H E A D E R
+
 header {
   background-color: $main-color;
   width: 100%;
@@ -68,12 +72,14 @@ header {
         line-height: 3.5rem;
         transition: all 0.6s ease;
         &:hover {
-          color: rgba(255, 255, 255, .75);
+          color: wheat;
         }
       }
     }
   }
 }
+
+//H E R O
 
 .hero-image {
   background-image: url("../photos/pexels-photo-529927.jpeg");
@@ -81,7 +87,7 @@ header {
   background-size: cover;
   background-position: center;
   height: 100vh;
-  width: 99vw;
+  width: 100%;
   position: relative;
   z-index: -1111;
   .header-text {
@@ -98,9 +104,6 @@ header {
       font-weight: 1;
       line-height: 6rem;
       text-transform: uppercase;
-      //animation: blinker 10s linear infinite;
-      //text-shadow: 0px 0px 21px $accent;
-      //transition: 3s ease;
       color: $header-color;
     }
     h2 {
@@ -126,7 +129,7 @@ section {
     border: none;
     font-family: "Open Sans", sans-serif;
     cursor: pointer;
-    color: $main-color;
+    color: white;
     background-color: $header-color;
     outline: 0;
     text-transform: uppercase;
@@ -142,15 +145,9 @@ section {
       background-color: $to-color;
     }
   }
-
-  ////@keyframes blinker {
-  ////  50% {
-  ////    opacity: 0.8;
-  ////    color: $to-color;
-  ////  }
-  //}
-
 }
+
+//A B O U T
 
 section.text {
   padding-top: 10rem;
@@ -158,18 +155,17 @@ section.text {
   font-family: 'Open Sans', Sans-serif;
   color: $font-color;
   .photo-about {
-    background-image: url("../photos/pexels-photo-395132.jpeg");
+    background-image: url("../photos/pexels-photo-597329.jpeg");
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 80vh;
-    float: right;
-    padding-top: 5rem;
+    background-size: 380%;
+    background-position: right top;
+    padding-top: 80vh;
   }
   h1 {
     font-size: 2.5rem;
     font-weight: 100;
     color: $main-color;
+    font-family: 'Playfair Display', serif;
     &:after {
       content: "";
       display: block;
@@ -201,15 +197,53 @@ section.text {
   }
 }
 
+//B A N E R
+
+section.banner.row {
+  width: 100%;
+  height: 50vh;
+  background-image: url("../photos/pexels-photo-395132.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  .light-bgc {
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 100%;
+    height: 50vh;
+    .header-text {
+      width: 80%;
+      margin: auto;
+      position: absolute;
+      top: 49%;
+      left: 52%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      h1 {
+        font-size: 4rem;
+        font-family: 'Playfair Display', Sans-serif;
+        font-weight: 1;
+        line-height: 4rem;
+        text-transform: uppercase;
+        color: $header-color;
+      }
+    }
+  }
+}
+
+//G A L L E R Y
+
 section.gallery {
   padding-top: 2rem;
-  font-family: 'Open Sans', Sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: $font-color;
   h2 {
     font-size: 2rem;
     font-weight: 100;
     padding-bottom: 3rem;
     color: $main-color;
+    padding-top: 5rem;
+    font-family: 'Playfair Display', serif;
     &:after {
       content: "";
       display: block;
@@ -217,9 +251,6 @@ section.gallery {
       height: 0.5rem;
       background-color: $header-color;
       transition: all 1s ease;
-      //margin-top: 3rem;
-      //z-index: -1111;
-      //position: absolute;
     }
     &:hover:after {
       width: 18rem;
@@ -231,24 +262,40 @@ section.gallery {
     padding-bottom: 1rem;
     transition: all 1s ease;
     cursor: pointer;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
     &:hover {
       color: $header-color;
     }
   }
   div.photo {
     border-radius: 50%;
-    width: 12.5rem;
-    height: 12.5rem;
+    width: 15rem;
+    height: 15rem;
     margin: 2rem auto;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    transition: all 1s ease;
+    background-position: right;
     cursor: pointer;
-    &:hover {
-      opacity: 0.3;
-      z-index: 2;
+    //&:hover {
+    //
+    //}
+    .price {
+      transition: all 1s ease;
+      border-radius: 50%;
+      width: 15rem;
+      height: 15rem;
+      margin: 0 auto;
+      line-height: 15rem;
+      opacity: 0;
+      &:hover {
+        opacity: 1;
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+      p {
+        font-family: 'Playfair Display', serif;
+        color: $header-color;
+        font-size: 4rem;
+      }
     }
   }
   p {
@@ -258,10 +305,11 @@ section.gallery {
 
 @for $i from 1 through 6 {
   .photo#{$i} {
-    background-image: url('../photos/bouquet#{$i}.jpeg');
+    background-image: url('../photos/pexels-photo-3dd95132.jpeg');
   }
 }
 
+//F O O T E R
 footer {
   margin-top: 7rem;
   font-family: 'Open Sans', Sans-serif;
@@ -290,7 +338,7 @@ footer {
 
   h4 {
     line-height: 5rem;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
   }
 
   .first-in-line {
