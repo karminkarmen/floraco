@@ -18,9 +18,21 @@ $to-color: #F5827D;
 $font-color: #343A40;
 $header-color: #EA4961;
 
+
+$tablet: "(min-width: 400px) and (max-width: 1200px)";
+@mixin tablet {
+  @media #{$tablet} {
+    @content;
+  }
+}
+
+
 .container {
   max-width: 71.25rem;
   width: 100%;
+  @include tablet {
+    width: 80%;
+  }
   margin: 0 auto;
 
   .row {
@@ -43,6 +55,7 @@ $header-color: #EA4961;
     }
   }
 }
+
 
 //H E A D E R
 .fa { font-family: 'FontAwesome' !important; }
@@ -84,39 +97,37 @@ header {
 }
 
 //H E R O
-
-.hero-image {
-  background-image: url("../photos/header.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+section {
   width: 100%;
-  position: relative;
-  z-index: -1111;
-  .header-text {
-    width: 50%;
-    margin: auto;
-    position: absolute;
-    top: 49%;
-    left: 52%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    h1 {
-      font-size: 7rem;
-      font-family: 'Playfair Display', Sans-serif;
-      font-weight: 1;
-      line-height: 6rem;
-      text-transform: uppercase;
-      color: $header-color;
-    }
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 100;
-      font-family: 'Open Sans', Sans-serif;
-      color: $main-color;
-      position: relative;
-      top: 1rem;
+  .hero-image {
+    background-image: url("../photos/header.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: -1111;
+    .header-text {
+      width: 50%;
+      margin: auto;
+      position: absolute;
+      top: 49%;
+      left: 52%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      h1 {
+        font-size: 7rem;
+        font-family: 'Playfair Display', Sans-serif;
+        font-weight: 1;
+        line-height: 6rem;
+        text-transform: uppercase;
+        color: $header-color;
+        @include tablet {
+          font-size: 4rem;
+          line-height: 5rem;
+        }
+      }
     }
   }
 }
@@ -139,7 +150,6 @@ section {
     text-transform: uppercase;
     z-index: 1;
     transition: all 0.3s ease;
-    //width: 50%;
     margin: auto;
     position: absolute;
     top: 70%;
@@ -158,46 +168,59 @@ section.text {
   padding-bottom: 5rem;
   font-family: 'Open Sans', Sans-serif;
   color: $font-color;
-  .photo-about {
-    background-image: url("../photos/header.jpeg");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position: right top;
-    padding-top: 80vh;
-  }
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 100;
-    color: $main-color;
-    font-family: 'Playfair Display', serif;
-    &:after {
-      content: "";
-      display: block;
-      width: 8rem;
-      height: 0.5rem;
-      background-color: $header-color;
-      transition: all 0.3s ease;
-      margin-top: 2.5rem;
-      z-index: -1111;
-      position: absolute;
+  .row {
+    .photo-about {
+      background-image: url("../photos/header.jpeg");
+      background-repeat: no-repeat;
+      background-size: 380%;
+      background-position: right top;
+      padding-top: 80vh;
+      @include tablet {
+        display: none;
+      }
     }
-    &:hover:after {
-      width: 18rem;
-      background-color: $to-color;
+    .col-6 {
+      @include tablet {
+        width: 100%;
+      }
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 100;
+        color: $main-color;
+        font-family: 'Playfair Display', serif;
+        &:after {
+          content: "";
+          display: block;
+          width: 8rem;
+          height: 0.5rem;
+          background-color: $header-color;
+          transition: all 0.3s ease;
+          margin-top: 2.5rem;
+          z-index: -1111;
+          position: absolute;
+        }
+        &:hover:after {
+          width: 18rem;
+          background-color: $to-color;
+        }
+      }
+      h2 {
+        font-size: 1.6rem;
+        font-weight: 100;
+        padding-bottom: 3rem;
+        color: $main-color;
+      }
+      p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+        float: left;
+        padding-right: 5rem;
+        padding-bottom: 2rem;
+        @include tablet {
+          padding-right: 0rem;
+        }
+      }
     }
-  }
-  h2 {
-    font-size: 1.6rem;
-    font-weight: 100;
-    padding-bottom: 3rem;
-    color: $main-color;
-  }
-  p {
-    font-size: 1rem;
-    line-height: 1.6rem;
-    float: left;
-    padding-right: 5rem;
-    padding-bottom: 2rem;
   }
 }
 
@@ -206,7 +229,7 @@ section.text {
 section.banner.row {
   width: 100%;
   height: 50vh;
-  background-image: url("../photos/banner.jpeg");
+  background-image: url("../photos/banner.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -230,6 +253,10 @@ section.banner.row {
         line-height: 4rem;
         text-transform: uppercase;
         color: $header-color;
+        @include tablet {
+          font-size: 3rem;
+          line-height: 3rem;
+        }
       }
     }
   }
@@ -261,54 +288,63 @@ section.gallery {
       background-color: $to-color;
     }
   }
-  h3 {
-    text-align: center;
-    padding-bottom: 1rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    &:hover {
-      color: $header-color;
-    }
-  }
-  div.photo {
-    border-radius: 50%;
-    width: 15rem;
-    height: 15rem;
-    margin: 2rem auto;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: right;
-    cursor: pointer;
-    .price {
-      transition: all 0.3s ease;
-      border-radius: 30%;
-      width: 15rem;
-      height: 15rem;
-      margin: 0 auto;
-      line-height: 15rem;
-      opacity: 0;
-      &:hover {
-        opacity: 1;
-        background-color: rgba(255, 255, 255, 0.8);
+  .row {
+    .col-4 {
+      @include tablet {
+        width: 100%;
       }
-      p {
-        font-family: 'Playfair Display', serif;
-        color: $header-color;
-        font-size: 3rem;
-        span {
-          font-size: 2rem;
+      h3 {
+        text-align: center;
+        padding-bottom: 1rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        &:hover {
+          color: $header-color;
         }
       }
+      div.photo {
+        border-radius: 50%;
+        width: 15rem;
+        height: 15rem;
+        margin: 2rem auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right;
+        cursor: pointer;
+        .price {
+          transition: all 0.3s ease;
+          border-radius: 30%;
+          width: 15rem;
+          height: 15rem;
+          margin: 0 auto;
+          line-height: 15rem;
+          opacity: 0;
+          &:hover {
+            opacity: 1;
+            background-color: rgba(255, 255, 255, 0.8);
+          }
+          p {
+            font-family: 'Playfair Display', serif;
+            color: $header-color;
+            font-size: 3rem;
+            span {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+      p {
+        text-align: center;
+      }
     }
   }
-  p {
-    text-align: center;
-  }
+
 }
 
 @for $i from 1 through 6 {
   .photo#{$i} {
     background-image: url('../photos/bouquet.jpeg');
+
   }
 }
 
