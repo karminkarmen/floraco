@@ -1,0 +1,46 @@
+.fa { font-family: 'FontAwesome' !important; }
+
+header {
+  background-color: $main-color;
+  width: 100%;
+  font-family: "open sans", Sans-serif;
+  height: 3.5rem;
+  position: fixed;
+  z-index: 2;
+  h2 {
+    color: white;
+    font-size: 1.2rem;
+    line-height: 3.5rem;
+    font-weight: 100;
+    font-family: 'Pacifico', 'Lato', Sans-serif;
+    a:link, a:visited, a:hover, a:active {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+nav {
+  float: right;
+  @include medium {
+    background-color: $main-color;
+    width: 90vw;
+  }
+  li {
+    list-style-type: none;
+    float: left;
+    padding-left: 1.5rem;
+    @include medium {
+      display: block;
+      position: relative;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      line-height: 3.5rem;
+      transition: all 0.3s ease;
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+$tablet: "(min-width: 400px) and (max-width: 1200px)";
+@mixin tablet {
+  @media #{$tablet} {
+    @content;
+  }
+}
+
+$medium: 800px;
+@mixin medium {
+  @media (max-width: #{$medium}) {
+    @content;
+  }
+}
+
+$columns: 12;
+$baseColumnWidth: 100%/$columns;
+
+.container {
+  max-width: 71.25rem;
+  width: 100%;
+  @include tablet {
+    width: 80%;
+  }
+  margin: 0 auto;
+
+  .row {
+    &:before, &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    [class*='col-'] {
+      float: left;
+      width: $baseColumnWidth;
+      min-height: 0.0625rem;
+    }
+
+    @for $i from 1 through $columns {
+      .col-#{$i} {
+        width: $baseColumnWidth * $i;
+      }
+    }
+  }
+}

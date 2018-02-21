@@ -1,0 +1,36 @@
+//F O O T E R
+footer {
+  margin-top: 7rem;
+  width: 100%;
+  height: 8rem;
+  color: white;
+  font-family: 'Open Sans', Sans-serif;
+  font-family: 'Lato', Sans-serif;
+  background-color: $main-color;
+  .logo {
+    color: white;
+    font-size: 1.2rem;
+    line-height: 5rem;
+    font-weight: 100;
+    font-family: 'Pacifico', 'Lato', Sans-serif;
+    text-align: center;
+  }
+  .copy {
+    float: right;
+    line-height: 5rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .col-12 {
+    text-align: left;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  h4 {
+    line-height: 5rem;
+    color: rgb(255, 255, 255);
+  }
+
+  .first-in-line {
+    margin-top: -1.3rem;
+  }
+}

@@ -1,0 +1,31 @@
+.mcBurger {
+  height: 0.2em;
+  z-index: 5;
+  cursor: pointer;
+  margin-top: 0.3em;
+  width: 25px;
+  float: right;
+}
+
+.burgline {
+  height: 0.2em;
+  width: 25px;
+  border-radius: 2px;
+  margin: 0.5em;
+  background-color: white;
+  transition: 0.15s ease;
+}
+
+.hidden {
+  width: 0;
+}
+
+.downsandwichstart {
+  transform: translateY(-12px) rotate(-45deg);
+  background-color: $header-color;
+}
+
+.topsandwichstart {
+  transform: translateY(10px) rotate(45deg);
+  background-color: $header-color;
+}
