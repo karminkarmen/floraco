@@ -1,7 +1,6 @@
 # Floraco
 
 Project of online flower shop.
-In progress.
 
 **Technologies: HTML, CSS, JS**
 
