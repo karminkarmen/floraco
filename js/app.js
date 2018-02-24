@@ -7,7 +7,8 @@ $(".mcBurger").click(function() {
 
 var menu = document.querySelector('.menu'),
     menuTrigger = document.querySelector('.mcBurger'),
-    mobile = window.matchMedia('(max-width: 800px)');
+    mobile = window.matchMedia('(max-width: 980px)'),
+    logo = document.querySelector('header h2');
 
 function mobileMatches(mobile) {
     if (mobile.matches) {
@@ -21,6 +22,7 @@ mobile.addListener( mobileMatches );
 
 menuTrigger.addEventListener( 'click', function(){
     menu.hidden = !menu.hidden;
+    logo.hidden = !logo.hidden;
 });
 
 function onMobile(){
