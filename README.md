@@ -1,4 +1,4 @@
-# Floraco
+# Floraco :tulip:
 
 Project of online flower shop.
 
