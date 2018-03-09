@@ -1,6 +1,6 @@
-# Floraco 
+# Floraco :tulip: 
 
-:tulip: Project of online flower shop.
+Project of online flower shop.
 
 **Technologies: HTML, SASS, JS, Gulp**
 
